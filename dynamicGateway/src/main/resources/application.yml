@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: rapidApi
+          uri: https://working-days.p.rapidapi.com/
+          predicates:
+            - Path= /**
+            - Method= Get
+    discovery:
+      enabled: true
+server:
+  port: 8888
